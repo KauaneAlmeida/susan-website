@@ -1,0 +1,1118 @@
+/* ================================================
+   Dr Susan - Estética Avançada - Custom Styles
+   Abordagem conservadora - só aplica onde necessário
+   ================================================ */
+
+/* ------------------------------------------------
+   0. RESET - Previne zoom no Netlify/produção
+   ------------------------------------------------ */
+html {
+  font-size: 16px !important;
+  zoom: 1 !important;
+  -webkit-text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+}
+
+body {
+  zoom: 1 !important;
+  transform: none !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  font-size: 16px !important;
+}
+
+#root {
+  zoom: 1 !important;
+  transform: none !important;
+}
+
+.min-h-screen {
+  zoom: 1 !important;
+  transform: none !important;
+}
+
+/* Box-sizing global */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ------------------------------------------------
+   0.1. FUNDO GLOBAL - Remove faixa branca
+   ------------------------------------------------ */
+
+/* Muda o fundo do html, body e containers principais para a cor bege do site */
+html,
+body,
+#root,
+.min-h-screen {
+  background-color: #faf8f6 !important; /* rose-beige-50 */
+  background: #faf8f6 !important;
+}
+
+/* Garante que o main não tenha fundo branco */
+main {
+  background-color: #faf8f6 !important;
+  background: #faf8f6 !important;
+}
+
+/* ------------------------------------------------
+   1. NAVBAR - Transparente com transição ao scroll
+   ------------------------------------------------ */
+
+/* Header/Nav - não quebra linha no texto */
+header, nav {
+  white-space: nowrap !important;
+}
+
+header a, header span, header button,
+nav a, nav span, nav button {
+  white-space: nowrap !important;
+}
+
+/* Navbar transparente - aplicar via JS com classe específica */
+.dr-susan-nav-transparent {
+  background: transparent !important;
+  background-color: transparent !important;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.dr-susan-nav-transparent a,
+.dr-susan-nav-transparent span,
+.dr-susan-nav-transparent button {
+  color: #fff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Navbar com fundo ao rolar */
+.dr-susan-nav-scrolled {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 2px 20px rgba(139, 111, 92, 0.15) !important;
+}
+
+.dr-susan-nav-scrolled a,
+.dr-susan-nav-scrolled span,
+.dr-susan-nav-scrolled button,
+.dr-susan-nav-scrolled div {
+  color: #8B6F5C !important;
+  text-shadow: none !important;
+}
+
+.dr-susan-nav-scrolled svg {
+  color: #8B6F5C !important;
+  stroke: #8B6F5C !important;
+}
+
+.dr-susan-nav-scrolled input[type="text"],
+.dr-susan-nav-scrolled input {
+  background: rgba(139, 111, 92, 0.1) !important;
+  border-color: rgba(139, 111, 92, 0.3) !important;
+  color: #5c4a3d !important;
+}
+
+.dr-susan-nav-scrolled input::placeholder {
+  color: rgba(139, 111, 92, 0.6) !important;
+}
+
+/* ------------------------------------------------
+   1.1. HERO CONTENT - Texto centralizado
+   ------------------------------------------------ */
+
+/* Animação de entrada de cima para baixo */
+@keyframes heroSlideDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes heroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#hero-content-custom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  width: 90%;
+  max-width: 800px;
+  padding: 2rem;
+  animation: heroSlideDown 1s ease-out forwards;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  line-height: 1.2;
+  opacity: 0;
+  animation: heroFadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  font-weight: 300;
+  opacity: 0;
+  animation: heroFadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.hero-btn {
+  display: inline-block !important;
+  background: linear-gradient(135deg, #8B6F5C 0%, #A67C6D 100%) !important;
+  color: #fff !important;
+  padding: 1rem 2.5rem !important;
+  border-radius: 50px !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(139, 111, 92, 0.4) !important;
+  border: none !important;
+  cursor: pointer !important;
+  opacity: 0;
+  animation: heroFadeInUp 0.8s ease-out 0.9s forwards !important;
+  visibility: visible !important;
+  position: relative !important;
+  left: auto !important;
+  pointer-events: auto !important;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(139, 111, 92, 0.5);
+  background: linear-gradient(135deg, #7a6050 0%, #956d5e 100%);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    padding: 0.875rem 2rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ------------------------------------------------
+   2. ANIMAÇÕES DE SCROLL
+   ------------------------------------------------ */
+
+/* Classe para elementos que vão animar */
+.dr-susan-animate {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.dr-susan-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delays para efeito cascata */
+.dr-susan-animate.delay-1 { transition-delay: 0.1s; }
+.dr-susan-animate.delay-2 { transition-delay: 0.2s; }
+.dr-susan-animate.delay-3 { transition-delay: 0.3s; }
+.dr-susan-animate.delay-4 { transition-delay: 0.4s; }
+
+/* ------------------------------------------------
+   2.1. ANIMAÇÕES DE SLIDE - Cards de Serviços
+   ------------------------------------------------ */
+
+/* Animação da imagem - vem da esquerda */
+.dr-susan-slide-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.dr-susan-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animação do conteúdo - vem da direita */
+.dr-susan-slide-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.dr-susan-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Delay para o conteúdo aparecer um pouco depois da imagem */
+.dr-susan-slide-right {
+  transition-delay: 0.15s;
+}
+
+/* Para cards com layout invertido (imagem à direita) */
+.dr-susan-slide-left-inverted {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.dr-susan-slide-left-inverted.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.dr-susan-slide-right-inverted {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition-delay: 0.15s;
+}
+
+.dr-susan-slide-right-inverted.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ------------------------------------------------
+   3. FIX - Remover linha decorativa do logo "Dr Susan"
+   ------------------------------------------------ */
+
+/* Remove QUALQUER elemento com altura de 1px (linha decorativa) dentro do header/nav */
+header .h-px,
+nav .h-px,
+header div[class*="h-px"],
+nav div[class*="h-px"],
+header div[class*="absolute"][class*="bottom"],
+nav div[class*="absolute"][class*="bottom"] {
+  display: none !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: none !important;
+}
+
+/* Remove underline/border de links no logo */
+header a,
+nav a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Remove pseudo-elementos que podem criar linhas */
+header a::after,
+header a::before,
+nav a::after,
+nav a::before,
+header span::after,
+header span::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* ------------------------------------------------
+   4. FIX - Header e Top bar com fundo transparente/escuro
+   ------------------------------------------------ */
+
+/* TOP BAR (barra com bandeiras e busca) - fundo escuro igual ao navbar */
+header > div:first-child {
+  background: linear-gradient(135deg, #8B6F5C 0%, #A67C6D 100%) !important;
+  background-color: #8B6F5C !important;
+}
+
+/* Quando transparente (no topo), manter transparente */
+.dr-susan-nav-transparent header > div:first-child,
+header.dr-susan-nav-transparent > div:first-child {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Header principal - transparente no topo */
+header {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: none !important;
+}
+
+/* Remove qualquer gradiente rose-beige */
+header div[class*="bg-gradient"],
+header [class*="from-rose-beige"],
+header [class*="bg-rose-beige"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Remove border do header */
+header[class*="border-b"],
+header [class*="border-b"] {
+  border-bottom: none !important;
+}
+
+/* ------------------------------------------------
+   5. Ajustes de cores para fundo transparente
+   ------------------------------------------------ */
+
+/* Textos do header em branco para contraste */
+header,
+header *,
+header a,
+header span,
+header button,
+header div {
+  color: #fff !important;
+}
+
+/* Ícones SVG em branco */
+header svg {
+  color: #fff !important;
+  stroke: #fff !important;
+}
+
+/* Campo de busca com fundo semi-transparente */
+header input[type="text"],
+header input {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #fff !important;
+}
+
+header input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ------------------------------------------------
+   6. Garantir que a linha sob o logo seja removida
+   ------------------------------------------------ */
+
+/* Força remoção de qualquer div de 1px de altura */
+header div[style*="height: 1px"],
+header div[style*="height:1px"],
+nav div[style*="height: 1px"],
+nav div[style*="height:1px"] {
+  display: none !important;
+}
+
+/* Remove qualquer elemento com gradient decorativo sob texto */
+header .absolute,
+nav .absolute {
+  background: none !important;
+  background-image: none !important;
+}
+
+/* Exceção para elementos que precisam de position absolute funcional */
+header .absolute:not([class*="h-px"]):not([class*="bottom"]) {
+  background: unset;
+}
+
+/* ------------------------------------------------
+   7. Logo posicionado mais à esquerda
+   ------------------------------------------------ */
+
+/* Container do navbar - reduzir padding lateral */
+header nav,
+header > nav,
+nav[class*="container"],
+header [class*="container"] {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+/* Logo mais à esquerda */
+header nav > div:first-child,
+header nav a:first-child,
+nav > div:first-child,
+nav a:first-child {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Ajuste do container max-width para usar mais espaço */
+header [class*="max-w"] {
+  max-width: 100% !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+
+/* ------------------------------------------------
+   9. Espaçamento entre seções - RESPONSIVO OTIMIZADO
+   ------------------------------------------------ */
+
+/* Espaçamento base entre seções */
+main > section {
+  margin-bottom: 0 !important;
+}
+
+/* === ESPAÇAMENTO GLOBAL PARA TODAS AS SECTIONS === */
+/* Mobile com valores grandes, desktop com valores normais */
+main section {
+  padding-top: 10rem !important;
+  padding-bottom: 10rem !important;
+}
+
+@media (min-width: 768px) {
+  main section {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  main section {
+    padding-top: 7rem !important;
+    padding-bottom: 7rem !important;
+  }
+}
+
+/* === CARROSSEL - espaço extra embaixo === */
+section[class*="from-white"][class*="via-rose-beige"] {
+  padding-bottom: 12rem !important;
+  background-color: #faf8f6 !important;
+}
+
+@media (min-width: 768px) {
+  section[class*="from-white"][class*="via-rose-beige"] {
+    padding-bottom: 10rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  section[class*="from-white"][class*="via-rose-beige"] {
+    padding-bottom: 14rem !important;
+  }
+}
+
+/* === "Experiências que Transformam" e "Outras Formas de Trabalhar Comigo" === */
+section[class*="from-rose-beige-50"][class*="to-white"] {
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Fix para mobile - espaçamentos entre seções */
+@media (max-width: 767px) {
+  /* Esconde o footer no mobile */
+  footer {
+    display: none !important;
+  }
+
+  /* Hero - ajusta para mostrar o rosto da mulher (lado direito) */
+  section[class*="h-screen"] {
+    height: 100vh !important;
+    min-height: 100vh !important;
+  }
+
+  section[class*="h-screen"] img,
+  section[class*="relative"][class*="h-screen"] img {
+    object-fit: cover !important;
+    object-position: 70% 20% !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Alternativa: ajustar o background se for background-image */
+  section[class*="h-screen"] [class*="absolute"][class*="inset-0"] {
+    background-size: cover !important;
+    background-position: 70% 20% !important;
+  }
+
+  /* Espaçamento geral no mobile */
+  main section {
+    padding-top: 6rem !important;
+    padding-bottom: 16rem !important;
+    overflow: visible !important;
+  }
+
+  /* Seções "Experiências que Transformam" e "Outras Formas de Trabalhar Comigo" */
+  section[class*="from-rose-beige-50"][class*="to-white"] {
+    padding-top: 8rem !important;
+    padding-bottom: 60rem !important;
+  }
+
+  /* Carrossel */
+  section[class*="from-white"][class*="via-rose-beige"] {
+    padding-top: 6rem !important;
+    padding-bottom: 18rem !important;
+  }
+
+  /* Vamos Conversar */
+  section[class*="from-white"][class*="to-rose-beige"]:not([class*="via-"]) {
+    padding-top: 3rem !important;
+    padding-bottom: 8rem !important;
+  }
+
+  /* Seção de procedimentos (cards) */
+  section[class*="bg-rose-beige-50"]:not([class*="from-"]):not([class*="to-"]) {
+    padding-top: 6rem !important;
+    padding-bottom: 14rem !important;
+  }
+
+  /* =====================================================
+     CARDS DE SERVIÇO - Imagens inteiras no mobile
+     Layout: imagem em cima, texto embaixo
+     ===================================================== */
+
+  /* Grid dos cards - layout empilhado */
+  .bg-rose-beige-50 .grid.grid-cols-1.lg\:grid-cols-2 {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+
+  /* Container da imagem - altura automática */
+  .bg-rose-beige-50 .grid.grid-cols-1.lg\:grid-cols-2 > div.relative {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: hidden !important;
+  }
+
+  /* Div interna que tem h-40 - remover altura fixa */
+  .bg-rose-beige-50 .grid.grid-cols-1.lg\:grid-cols-2 > div.relative > div.relative {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Imagem - aparece inteira sem corte */
+  .bg-rose-beige-50 .grid.grid-cols-1.lg\:grid-cols-2 > div.relative img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    max-height: none !important;
+  }
+
+  /* Container do texto - largura total */
+  .bg-rose-beige-50 .grid.grid-cols-1.lg\:grid-cols-2 > div.flex {
+    width: 100% !important;
+  }
+
+  /* Cirurgias Corporais - zoom leve na imagem para esconder ícone WhatsApp */
+  img[src*="04ASIsT"] {
+    transform: scale(1.1) !important;
+  }
+
+}
+
+
+@media (min-width: 768px) {
+  section[class*="from-rose-beige-50"][class*="to-white"] {
+    padding-top: 10rem !important;
+    padding-bottom: 14rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  section[class*="from-rose-beige-50"][class*="to-white"] {
+    padding-top: 12rem !important;
+    padding-bottom: 18rem !important;
+  }
+}
+
+/* === "Vamos Conversar?" - espaçamento antes do footer === */
+@media (min-width: 768px) {
+  section[class*="from-white"][class*="to-rose-beige"]:not([class*="via-"]) {
+    padding-bottom: 32rem !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  section[class*="from-white"][class*="to-rose-beige"]:not([class*="via-"]) {
+    padding-bottom: 48rem !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  section[class*="from-white"][class*="to-rose-beige"]:not([class*="via-"]) {
+    padding-bottom: 60rem !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* === Seção de procedimentos (cards de especialidades) === */
+section[class*="bg-rose-beige-50"]:not([class*="from-"]):not([class*="to-"]) {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+@media (min-width: 768px) {
+  section[class*="bg-rose-beige-50"]:not([class*="from-"]):not([class*="to-"]) {
+    padding-top: 5rem !important;
+    padding-bottom: 6rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  section[class*="bg-rose-beige-50"]:not([class*="from-"]):not([class*="to-"]) {
+    padding-top: 6rem !important;
+    padding-bottom: 7rem !important;
+  }
+}
+
+/* ------------------------------------------------
+   10. WhatsApp Button - Ícone oficial do WhatsApp
+   ------------------------------------------------ */
+
+/* Esconde QUALQUER elemento fixo no canto inferior direito que não seja nosso botão */
+.fixed.bottom-4.right-4,
+.fixed.bottom-6.right-6,
+.fixed.right-4.bottom-4,
+.fixed.right-6.bottom-6,
+[class*="fixed"][class*="bottom"][class*="right"]:not(#whatsapp-btn-custom),
+div.fixed:has(a[href*="wa.me"]),
+div[class*="fixed"]:has(a[href*="wa.me"]) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Esconde TODOS os botões/links do WhatsApp exceto o nosso e o do hero */
+a[href*="wa.me"]:not(#whatsapp-btn-custom):not(.hero-btn),
+a[href*="whatsapp"]:not(#whatsapp-btn-custom):not(.hero-btn),
+a[href*="api.whatsapp"]:not(#whatsapp-btn-custom):not(.hero-btn) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Nosso botão customizado - SEMPRE visível */
+#whatsapp-btn-custom {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: fixed !important;
+  right: 40px !important;
+  bottom: 24px !important;
+  z-index: 99999 !important;
+  width: 56px !important;
+  height: 56px !important;
+  background-color: #25D366 !important;
+  border-radius: 50% !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important;
+}
+
+#whatsapp-btn-custom i {
+  font-size: 28px !important;
+  color: #fff !important;
+}
+
+/* Mobile - ajuste de posição */
+@media (max-width: 767px) {
+  #whatsapp-btn-custom {
+    right: 20px !important;
+    bottom: 20px !important;
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  #whatsapp-btn-custom i {
+    font-size: 26px !important;
+  }
+}
+
+/* ------------------------------------------------
+   11. SEÇÃO SOBRE MIM - Dra. Susan
+   ------------------------------------------------ */
+
+#sobre-mim-section {
+  background: linear-gradient(135deg, #faf8f6 0%, #f5f0ec 100%);
+  padding: 5rem 1.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  #sobre-mim-section {
+    padding: 6rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #sobre-mim-section {
+    padding: 7rem 4rem;
+  }
+}
+
+/* Container principal */
+.sobre-mim-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card principal */
+.sobre-mim-card {
+  background: linear-gradient(145deg, #ffffff 0%, #fdfcfb 100%);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(139, 111, 92, 0.12), 0 4px 12px rgba(139, 111, 92, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .sobre-mim-card {
+    flex-direction: row;
+    min-height: 500px;
+  }
+}
+
+/* Área da foto */
+.sobre-mim-foto {
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+@media (min-width: 768px) {
+  .sobre-mim-foto {
+    width: 40%;
+    height: auto;
+    min-height: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sobre-mim-foto {
+    width: 42%;
+  }
+}
+
+.sobre-mim-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+
+.sobre-mim-card:hover .sobre-mim-foto img {
+  transform: scale(1.03);
+}
+
+/* Overlay elegante na foto */
+.sobre-mim-foto::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(139, 111, 92, 0.15), transparent);
+  pointer-events: none;
+}
+
+/* Área de conteúdo */
+.sobre-mim-conteudo {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .sobre-mim-conteudo {
+    padding: 3rem 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sobre-mim-conteudo {
+    padding: 3.5rem 3.5rem;
+  }
+}
+
+/* Título "Sobre Mim" */
+.sobre-mim-titulo {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #8B6F5C;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .sobre-mim-titulo {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sobre-mim-titulo {
+    font-size: 2.5rem;
+  }
+}
+
+/* Linha decorativa sob o título */
+.sobre-mim-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #A67C6D 0%, #C4A68A 100%);
+  border-radius: 2px;
+}
+
+/* Nome da Dra. */
+.sobre-mim-nome {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #5c4a3d;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .sobre-mim-nome {
+    font-size: 1.625rem;
+  }
+}
+
+/* Especialidade */
+.sobre-mim-especialidade {
+  font-size: 1rem;
+  color: #A67C6D;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* CRM */
+.sobre-mim-crm {
+  font-size: 0.875rem;
+  color: #9a8b7a;
+  margin-bottom: 1.25rem;
+}
+
+/* Texto bio */
+.sobre-mim-bio {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #6b5c4c;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .sobre-mim-bio {
+    font-size: 1rem;
+  }
+}
+
+/* Lista de diferenciais */
+.sobre-mim-diferenciais {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem 0;
+}
+
+.sobre-mim-diferenciais li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: #5c4a3d;
+  margin-bottom: 0.625rem;
+  line-height: 1.5;
+}
+
+.sobre-mim-diferenciais li::before {
+  content: '✓';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #A67C6D 0%, #C4A68A 100%);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Botão */
+.sobre-mim-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #8B6F5C 0%, #A67C6D 100%);
+  color: white !important;
+  padding: 0.875rem 1.75rem;
+  border-radius: 50px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 111, 92, 0.3);
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.sobre-mim-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 111, 92, 0.4);
+  background: linear-gradient(135deg, #7a6050 0%, #956d5e 100%);
+}
+
+.sobre-mim-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.sobre-mim-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Animações de entrada */
+.sobre-mim-foto.dr-susan-slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.sobre-mim-foto.dr-susan-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sobre-mim-conteudo.dr-susan-slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+.sobre-mim-conteudo.dr-susan-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ------------------------------------------------
+   12. SEÇÃO INTRODUÇÃO - Background com onda
+   ------------------------------------------------ */
+
+#intro-section-onda {
+  position: relative;
+  overflow: hidden;
+}
+
+#intro-section-onda::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/onda.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#intro-section-onda > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: espaçamento específico da seção Sobre Mim */
+@media (max-width: 767px) {
+  #sobre-mim-section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .sobre-mim-card {
+    border-radius: 16px;
+  }
+
+  .sobre-mim-foto {
+    height: 380px;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .sobre-mim-foto img {
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+
+  .sobre-mim-conteudo {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .sobre-mim-titulo {
+    font-size: 1.75rem;
+  }
+
+  .sobre-mim-nome {
+    font-size: 1.25rem;
+  }
+
+  .sobre-mim-bio {
+    font-size: 0.875rem;
+  }
+
+  .sobre-mim-diferenciais li {
+    font-size: 0.875rem;
+  }
+}
+
