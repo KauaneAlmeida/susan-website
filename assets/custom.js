@@ -14,8 +14,8 @@
   }
 
   function init() {
-    // Aguardar React renderizar (aumentado para garantir)
-    setTimeout(setupAll, 1500);
+    // Aguardar React renderizar
+    setTimeout(setupAll, 500);
   }
 
   function setupAll() {
@@ -283,8 +283,8 @@
     console.log('[ANIM] Total de cards configurados:', cardIndex);
 
     if (cardIndex === 0) {
-      console.log('[ANIM] Nenhum card encontrado, tentando em 2s...');
-      setTimeout(setupServiceCardsAnimations, 2000);
+      console.log('[ANIM] Nenhum card encontrado, tentando em 1s...');
+      setTimeout(setupServiceCardsAnimations, 1000);
       return;
     }
 
