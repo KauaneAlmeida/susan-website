@@ -435,12 +435,12 @@
       <div class="sobre-mim-container">
         <div class="sobre-mim-card">
           <div class="sobre-mim-foto dr-susan-slide-left">
-            <img src="/assets/drsusan.png" alt="Dra. Susan - Cirurgiã Plástica" />
+            <img src="/assets/drsusan.png" alt="Dra. Susan - Especialista em Estética Avançada" />
           </div>
           <div class="sobre-mim-conteudo dr-susan-slide-right">
             <h2 class="sobre-mim-titulo">Sobre Mim</h2>
             <h3 class="sobre-mim-nome">Dra. Susan</h3>
-            <p class="sobre-mim-especialidade">Cirurgiã Plástica e Especialista em Estética Avançada</p>
+            <p class="sobre-mim-especialidade">Especialista em Estética Avançada</p>
             <p class="sobre-mim-crm">CRM/SP XXXXX | RQE XXXXX</p>
             <p class="sobre-mim-bio">
               Com anos de dedicação à medicina estética, minha missão é realçar a beleza natural de cada paciente através de uma abordagem conservadora e personalizada. Utilizo as tecnologias mais modernas do mercado, sempre priorizando a segurança, o bem-estar e resultados harmoniosos que elevam a autoestima e a confiança das minhas pacientes.
