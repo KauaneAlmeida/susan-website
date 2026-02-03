@@ -587,18 +587,19 @@ section[class*="from-rose-beige-50"][class*="to-white"] {
   /* Carrossel */
   section[class*="from-white"][class*="via-rose-beige"] {
     padding-top: 6rem !important;
-    padding-bottom: 18rem !important;
-  }
-
-  /* Vamos Conversar */
-  section[class*="from-white"][class*="to-rose-beige"]:not([class*="via-"]) {
-    padding-top: 3rem !important;
     padding-bottom: 8rem !important;
   }
 
-  /* Seção de procedimentos (cards) */
+  /* Vamos Conversar - reduz espaço superior para ficar mais perto de "Outras Formas" */
+  section[class*="from-white"][class*="to-rose-beige"]:not([class*="via-"]) {
+    padding-top: 2rem !important;
+    padding-bottom: 8rem !important;
+    margin-top: -4rem !important;
+  }
+
+  /* Seção de procedimentos (cards - Estética Avançada, etc) */
   section[class*="bg-rose-beige-50"]:not([class*="from-"]):not([class*="to-"]) {
-    padding-top: 6rem !important;
+    padding-top: 3rem !important;
     padding-bottom: 14rem !important;
   }
 
